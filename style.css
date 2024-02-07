@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 body {
@@ -10,6 +12,7 @@ body {
     align-items: center;
     background-color: rgb(98, 104, 109);
     height: 100vh;
+    width: 100vw;
     flex-direction: column;
 }
 
@@ -19,33 +22,43 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 5px;
-    border-radius: 5px;
+    gap: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 10px white;
+    position: relative;
+}
 
+h1 {
+    color: white;
+    border: 5px solid red;
+    padding: 15px ;
+    border-radius: 45px;
+    font-size: 1.5rem;
 }
 
 .board>div {
-    /* border-radius: 5px; */
     cursor: pointer;
-    box-shadow: 0 0 25px 5px;
+    box-shadow: 0 0 5px 5px;
 
 }
 
+
+
 .red {
     background-color: red;
-    border-radius:  100% 0 0 0;
+    border-radius: 100% 0 0 0;
 
 }
 
 .blue {
     background-color: blue;
-    border-radius:  0 100% 0 0;
+    border-radius: 0 100% 0 0;
 
 }
 
 .green {
     background-color: green;
-    border-radius:  0 0 0 100%;
+    border-radius: 0 0 0 100%;
 
 }
 
@@ -55,12 +68,28 @@ body {
 
 }
 
-.btn {
-    width: 100px;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0 0 25px 5px;
-    font-size: 1.5rem;
-    cursor: pointer;
+
+
+.flash {
+    animation: flash-animation 0.5s ease;
+}
+
+@keyframes flash-animation {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+
+        box-shadow: 0 0 20px 20px white;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.game-over {
+    background-color: red;
 }
